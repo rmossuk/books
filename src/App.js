@@ -13,14 +13,13 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   const fetchData = () => {
-    fetch("http://127.0.0.1:3001/api/")
+    fetch("http://127.0.0.1:3000/api/")
     .then((response) => response.json())
     .then((response) => {
       setBooks(response);
       setLoading(false);
     })
     .catch(() => {
-      console.log("error")
     });
   }
 
