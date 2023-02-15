@@ -6,6 +6,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
+import { maxWidth } from '@mui/system';
 
 function App() {
 
@@ -52,20 +53,23 @@ function App() {
     <div class="main">
       {books.map((book, index) => (
         <div className={"booksContainer"+index}>
-          <Container maxWidth="md" style={{maxWidth:"1000px"}}>
+          <Container maxWidth="md" className="booksInner">
             <Grid container spacing={2}>
               <Grid item xs={8}>
-              <div style={{paddingTop:"30px",paddingBottom:"30px"}}>
-                <h2 style={{fontSize:45, fontWeight:'normal', fontFamily: 'sans-serif', color:"#ffffff", letterSpacing:'-1px'}}>{index} {book.title}</h2>
+              <div className="bookHeader">
+                <h2>{book.title}</h2>
               </div>
-              <div style={{fontSize:16, fontWeight:'normal', fontFamily: 'sans-serif', color:"#ffffff", letterSpacing:'-1px', lineHeight: "1.5em"}}>
-                <p style={{marginBottom:'16px'}}>{book.subtitle}</p>
-                <p style={{marginBottom:'16px'}}>{book.summary}</p>
-                <p style={{marginBottom:'16px'}}>{book.content}</p>
+              <div className="bookContent">
+                <p>{book.subtitle}</p>
+                <p>{book.summary}</p>
+                <p>{book.content}</p>
               </div>
-              <div style={{fontSize:16, fontWeight:'normal', fontFamily: 'sans-serif', color:"#ffffff", letterSpacing:'-1px', lineHeight: "1.5em"}}>
-                <p style={{paddingTop:"20px",marginBottom:'16px'}}>
-                  <Link href={book.audible}>Audible</Link> <Link href={book.paperback}>Paperback</Link> <Link href={book.kindle}>Kindle</Link> <Link href={book.ebook}>ebook</Link>
+              <div className="bookFooter">
+                <p>
+                  <Link href={book.audible}>Audible</Link> 
+                  <Link href={book.paperback}>Paperback</Link> 
+                  <Link href={book.kindle}>Kindle</Link> 
+                  <Link href={book.ebook}>ebook</Link>
                 </p>
               </div>
               </Grid>

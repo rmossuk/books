@@ -122,6 +122,10 @@ h1{
   background-color: #051E3EE3 !important;
 }
 
+.nigelHeader div img {
+  max-width: 180px;
+}
+
 .booksContainer {
   min-height: 200px;
   width: 100%;
@@ -149,11 +153,12 @@ h1{
 
 .booksContainer2 {
   min-height: 200px;
-  background-image: linear-gradient(180deg, #FFFFFF 8%, #0D1621 75%);
+  background-image: linear-gradient(180deg, #63A5BF 24%, #0F1825 62%);
   width: 100%;
-  --e-global-color-secondary: #223855;
+  opacity: 1;
   padding-top: 20px;
   padding-bottom: 10px;
+  background-color: transparent;
 }
 
 .booksContainer3 {
@@ -169,4 +174,52 @@ h1{
 
 .App {
   background-image: url(https://i0.wp.com/94o.610.myftpupload.com/wp-content/uploads/2022/12/6.png?fit=2700%2C2700&ssl=1);
+}
+
+.booksInner {
+  max-width: 1000px;
+}
+
+.bookHeader {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.bookHeader h2 {
+  font-size: 45px;
+  font-weight: normal;
+  font-family: sans-serif;
+  color: #FFFFFF;
+  letter-spacing: -1px; 
+}
+
+.bookContent {
+  font-size: 16px;
+  font-weight: normal;
+  font-family: sans-serif;
+  color: #FFFFFF;
+  letter-spacing: -1px; 
+  line-height: 1.5em;
+}
+
+.bookContent p {
+  margin-bottom: 16px;
+}
+
+.bookFooter {
+  font-size: 16px;
+  font-weight: normal;
+  font-family: sans-serif;
+  color: #FFFFFF;
+  letter-spacing: -1px; 
+  line-height: 1.5em;
+}
+
+.bookFooter p {
+  padding-top: 20px;
+  margin-bottom: 16px;
+}
+
+.bookFooter p a {
+  margin-right: 10px;
 }
