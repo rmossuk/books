@@ -22,9 +22,11 @@ struct Book {
     content: String,
     authorname: String,
     coauthor: Option<String>,
+    audible: Option<String>,
     kindle: Option<String>,
     paperback: Option<String>,
     ebook: Option<String>,
+    image: Option<String>,
     tag: Option<String>,
 }
 
@@ -53,7 +55,7 @@ fn process(req: Request) -> Result<Response> {
     println!("path: {}", req.headers().get("spin-full-url").unwrap().to_str().unwrap());
     
     match req.uri().path() {
-        "/api" => books(req),
+        "/api/" => books(req),
         // "/book" => book(req),
         _ => Ok(http::Response::builder()
             .status(404)
@@ -79,10 +81,12 @@ fn books(_req: Request) -> Result<Response> {
             content: String::decode(&row[4])?,
             authorname: String::decode(&row[5])?,
             coauthor: Option::<String>::decode(&row[6])?,
-            kindle: Option::<String>::decode(&row[7])?,
-            paperback: Option::<String>::decode(&row[8])?,
-            ebook: Option::<String>::decode(&row[9])?,
-            tag: Option::<String>::decode(&row[10])?,
+            audible: Option::<String>::decode(&row[7])?,
+            kindle: Option::<String>::decode(&row[8])?,
+            paperback: Option::<String>::decode(&row[9])?,
+            ebook: Option::<String>::decode(&row[10])?,
+            image: Option::<String>::decode(&row[11])?,
+            tag: Option::<String>::decode(&row[12])?,
         };
         books.push(book);
     }

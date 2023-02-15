@@ -2,6 +2,11 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+docker run --name postgres-db -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
+docker exec -it 3df020fdf403 bash
+psql -U postgres
+then seed 
+
 ## Available Scripts
 
 In the project directory, you can run:
